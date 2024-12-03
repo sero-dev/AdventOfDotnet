@@ -26,7 +26,7 @@ while (dayInput is null)
     if (!availableDays.Any(d => d.Equals(dayInput)))
     {
         Console.WriteLine($"Day {dayInput} not registered with solutions");
-        continue;
+        dayInput = null;
     }
 }
 
@@ -59,7 +59,7 @@ while (part is null)
 }
 
 if (part is null) { throw new Exception("Part is null"); }
-//Console.WriteLine(register.RunSolution(dayInput, part));
+Console.WriteLine(register.RunSolution(dayInput, part.GetValueOrDefault()));
 
 
 

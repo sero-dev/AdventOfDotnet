@@ -12,7 +12,7 @@ internal class DaySolutionRegistry
 
         var derivedTypes = Assembly.GetExecutingAssembly()
             .GetTypes()
-            .Where(t => t.IsClass && !t.IsInterface && baseType.IsAssignableFrom(t) && t.Namespace == nameof(AdventOfDotnet.Solutions));
+            .Where(t => t.IsClass && !t.IsInterface && baseType.IsAssignableFrom(t));
 
         foreach (var derivedType in derivedTypes)
         {

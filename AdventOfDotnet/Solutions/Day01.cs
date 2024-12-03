@@ -11,8 +11,8 @@ public class Day01 : IDaySolution
 
     public string SolvePart1(string input)
     {
-        var lines = input.Split("\r\n");
-        var pattern = "^(\\d+)\\s+(\\d+)$";
+        var lines = input.Split("\n");
+        var pattern = "(\\d+)\\s+(\\d+)";
 
         var leftList = new List<int>();
         var rightList = new List<int>();
@@ -22,8 +22,8 @@ public class Day01 : IDaySolution
             var matches = Regex.Match(line, pattern);
             if (!matches.Success) continue;
 
-            var left =  Int32.Parse(matches.Groups[1].Value ?? throw new Exception($"Left number could not be found on {line}"));
-            var right = Int32.Parse(matches.Groups[2].Value ?? throw new Exception($"Right number could not be found on {line}"));
+            var left = int.Parse(matches.Groups[1].Value ?? throw new Exception($"Left number could not be found on {line}"));
+            var right = int.Parse(matches.Groups[2].Value ?? throw new Exception($"Right number could not be found on {line}"));
 
             leftList.Add(left);
             rightList.Add(right);
@@ -56,8 +56,8 @@ public class Day01 : IDaySolution
             var matches = Regex.Match(line, pattern);
             if (!matches.Success) continue;
 
-            var left = Int32.Parse(matches.Groups[1].Value ?? throw new Exception($"Left number could not be found on {line}"));
-            var right = Int32.Parse(matches.Groups[2].Value ?? throw new Exception($"Right number could not be found on {line}"));
+            var left = int.Parse(matches.Groups[1].Value ?? throw new Exception($"Left number could not be found on {line}"));
+            var right = int.Parse(matches.Groups[2].Value ?? throw new Exception($"Right number could not be found on {line}"));
 
             leftList.Add(left);
 
